@@ -30,4 +30,6 @@ setup(
     install_requires=requirements,
     author="Kai Geissdoerfer",
     author_email="kai.geissdoerfer@tu-dresden.de",
+    setup_requires=["pytest-runner"],
+    tests_require=["pytest>=3.9"],
 )
