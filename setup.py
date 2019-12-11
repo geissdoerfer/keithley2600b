@@ -11,7 +11,7 @@ requirements = ["numpy", "pyvisa-py"]
 
 setup(
     name="keithley2600b",
-    version="0.0.1",
+    version="0.0.2",
     description="Python API for Keithley Series 2600B SourceMeter",
     long_description=README,
     long_description_content_type="text/markdown",
