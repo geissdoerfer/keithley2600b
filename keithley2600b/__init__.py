@@ -95,8 +95,8 @@ class SMU(object):
         self._inst_str = inst_str
 
     @classmethod
-    def usb_device(cls):
-        return cls("USB0::1510::9730::4418562\x00::0::INSTR")
+    def usb_device(cls, device_string):
+        return cls(device_string)
 
     @classmethod
     def ethernet_device(cls, ip):
