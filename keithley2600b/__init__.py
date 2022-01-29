@@ -53,7 +53,7 @@ class SMU(object):
             self._inst.write(f"smu{ self._name }.source.levelv = {voltage}")
             self._inst.write(f"smu{ self._name }.source.limiti = {ilimit}")
 
-        def measure_voltage(self, range=None, nplc=1, 4wire: bool = False):
+        def measure_voltage(self, range=None, nplc=1, mode_4wire: bool = False):
             if range is None:
                 self._inst.write(
                     (
@@ -63,8 +63,8 @@ class SMU(object):
                 )
             else:
                 self._inst.write((f"smu{ self._name }.measure.rangev = " f"{ range }"))
-            if 4wire:
-                self._inst.write(f"smu{ self._name }.sense = 1") # 4Wire-Mode
+            if mode_4wire:
+                self._inst.write(f"smu{ self._name }.sense = 1")
             self._inst.write(f"smu{ self._name }.measure.nplc = { nplc }")
             self._inst.write(f"val_v=smu{ self._name }.measure.v()")
 
