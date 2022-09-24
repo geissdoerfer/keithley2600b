@@ -1,4 +1,4 @@
-import visa
+import pyvisa as visa
 import numpy as np
 import time
 import xdrlib
@@ -42,6 +42,9 @@ class SMU(object):
                         f"smu{ self._name }.AUTORANGE_ON"
                     )
                 )
+
+        def configure_4port_mode(self, enable: bool = True):
+            self._inst.write(f"smu{self._name}.sense = {int(enable)}")
 
         def set_current(self, current, vlimit=5):
 
