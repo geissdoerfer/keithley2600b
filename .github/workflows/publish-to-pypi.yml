@@ -1,6 +1,9 @@
 name: Publish Python package to PyPI
 
-on: release
+on:
+  push:
+    tags:
+      - "*"
 
 jobs:
   build-n-publish:
