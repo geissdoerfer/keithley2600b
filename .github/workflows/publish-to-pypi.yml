@@ -1,6 +1,6 @@
 name: Publish Python package to PyPI
 
-on: push
+on: release
 
 jobs:
   build-n-publish:
@@ -22,5 +22,4 @@ jobs:
       - name: Publish package to Test PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          password: ${{ secrets.PYPI_TEST_TOKEN }}
-          repository_url: https://test.pypi.org/legacy/
+          password: ${{ secrets.PYPI_TOKEN }}
